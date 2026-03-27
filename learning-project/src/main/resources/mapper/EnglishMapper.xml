@@ -5,7 +5,7 @@
         SELECT * FROM english
         <where>
             <if test="keyword != null and keyword != ''">
-                AND (word LIKE CONCAT('%', #{keyword}, '%') OR meaning LIKE CONCAT('%', #{keyword}, '%'))
+                AND word LIKE CONCAT( #{keyword}, '%')
             </if>
         </where>
         ORDER BY id DESC

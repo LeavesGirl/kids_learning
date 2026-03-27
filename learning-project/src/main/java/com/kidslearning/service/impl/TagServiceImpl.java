@@ -12,33 +12,29 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagService {
 
     @Override
-    public Map<String, List<String>> getTagsByType() {
-        Map<String, List<String>> tagsMap = new HashMap<>();
-        
-        // 确保按固定顺序添加类型
-        tagsMap.put("dynasty", new ArrayList<>());
-        tagsMap.put("author", new ArrayList<>());
-        tagsMap.put("genre", new ArrayList<>());
-        tagsMap.put("theme", new ArrayList<>());
-        
+    public Map<String, List<Tag>> getTagsByType() {
         // 获取所有标签
         List<Tag> tags = baseMapper.selectList(null);
-        
-        // 按类型分组
-        for (Tag tag : tags) {
-            String type = tag.getType();
-            String name = tag.getName();
-            
-            if (tagsMap.containsKey(type)) {
-                tagsMap.get(type).add(name);
+        return tags.stream().collect(Collectors.groupingBy(t -> {
+            switch (t.getType()) {
+                case "author":
+                    return "作者";
+                case "theme":
+                    return "主题";
+                case "genre":
+                    return "体裁";
+                case "dynasty":
+                    return "朝代";
+                default:
+                    return "未知";
             }
-        }
-        
-        return tagsMap;
+        }));
+
     }
 }

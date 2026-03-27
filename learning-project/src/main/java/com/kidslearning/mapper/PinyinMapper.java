@@ -8,9 +8,11 @@ import com.kidslearning.entity.query.PinyinQuery;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface PinyinMapper extends BaseMapper<Pinyin> {
 
-    List<Pinyin> selectByQuery(PinyinQuery query);
+
+    Page<Pinyin> selectByQuery(Page<Pinyin> page, @Param("query")PinyinQuery query);
 }

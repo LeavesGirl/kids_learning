@@ -8,9 +8,11 @@ import com.kidslearning.entity.query.MathQuery;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface MathMapper extends BaseMapper<Math> {
 
-    List<Math> selectByQuery(MathQuery query);
+
+    Page<Math> selectByQuery(Page<Math> page, @Param("query") MathQuery query);
 }

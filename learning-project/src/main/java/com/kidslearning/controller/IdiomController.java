@@ -14,6 +14,7 @@ public class IdiomController extends BaseController<Idiom, IdiomQuery> {
 
     @Autowired
     private IdiomService idiomService;
+    
 
 
 }

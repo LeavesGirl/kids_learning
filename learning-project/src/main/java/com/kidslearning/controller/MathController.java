@@ -19,6 +19,11 @@ public class MathController extends BaseController<Math, MathQuery> {
 
     @Autowired
     private MathService mathService;
+    
+    @Autowired
+    public void setMathService(MathService mathService) {
+        this.baseService = mathService;
+    }
 
     
 

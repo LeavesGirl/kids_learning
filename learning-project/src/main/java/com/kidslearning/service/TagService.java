@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface TagService extends IService<Tag> {
-    Map<String, List<String>> getTagsByType();
+    Map<String, List<Tag>> getTagsByType();
 }

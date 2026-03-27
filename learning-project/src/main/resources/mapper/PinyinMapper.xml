@@ -5,7 +5,7 @@
         SELECT * FROM pinyin
         <where>
             <if test="keyword != null and keyword != ''">
-                AND (pinyin LIKE CONCAT('%', #{keyword}, '%') OR `character` LIKE CONCAT('%', #{keyword}, '%'))
+              `character` LIKE CONCAT(#{keyword}, '%')
             </if>
         </where>
         ORDER BY id DESC

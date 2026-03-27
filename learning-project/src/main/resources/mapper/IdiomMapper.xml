@@ -5,7 +5,7 @@
         SELECT * FROM idiom
         <where>
             <if test="keyword != null and keyword != ''">
-                AND (idiom LIKE CONCAT('%', #{keyword}, '%') OR pinyin LIKE CONCAT('%', #{keyword}, '%'))
+                AND  diom LIKE CONCAT('%', #{keyword}, '%')
             </if>
         </where>
         ORDER BY id DESC

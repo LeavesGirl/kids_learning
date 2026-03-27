@@ -19,10 +19,10 @@ public class DrawingController extends BaseController<Drawing, DrawingQuery> {
 
     @Autowired
     private DrawingService drawingService;
-
+    
     @Autowired
     public void setDrawingService(DrawingService drawingService) {
-        super.setBaseService(drawingService);
+        this.baseService = drawingService;
     }
 
 }

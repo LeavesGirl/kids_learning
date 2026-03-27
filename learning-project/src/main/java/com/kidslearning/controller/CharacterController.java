@@ -19,5 +19,5 @@ public class CharacterController extends BaseController<ChineseCharacter, Charac
 
     @Autowired      
     private CharacterService characterService;
-
+   
 }

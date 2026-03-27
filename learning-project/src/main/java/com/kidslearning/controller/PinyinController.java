@@ -14,6 +14,11 @@ public class PinyinController extends BaseController<Pinyin, PinyinQuery> {
 
     @Autowired
     private PinyinService pinyinService;
+    
+    @Autowired
+    public void setPinyinService(PinyinService pinyinService) {
+        this.baseService = pinyinService;
+    }
 
   
 

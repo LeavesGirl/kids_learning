@@ -5,29 +5,27 @@
     <select id="selectByQuery" resultType="com.kidslearning.entity.Poetry" parameterType="com.kidslearning.entity.query.PoetryQuery">
         SELECT * FROM poetry
         <where>
-            <if test="keyword != null and keyword != ''">
-                (title LIKE CONCAT('%', #{keyword}, '%') 
-                OR author LIKE CONCAT('%', #{keyword}, '%') 
-                OR content LIKE CONCAT('%', #{keyword}, '%'))
+            <if test="query.keyword != null and query.keyword != ''">
+                AND content LIKE CONCAT('%', #{query.keyword}, '%')
             </if>
-            <if test="dynasty != null and dynasty != ''">
+            <if test="query.dynasty != null and query.dynasty != ''">
                 AND dynasty = #{dynasty}
             </if>
-            <if test="author != null and author != ''">
-                AND author = #{author}
+            <if test="query.author != null and query.author != ''">
+                AND author = #{query.author}
             </if>
-            <if test="genre != null and genre != ''">
+            <if test="query.genre != null and query.genre != ''">
                 AND id IN (
                     SELECT poetry_id FROM poetry_tag 
                     JOIN tag ON poetry_tag.tag_id = tag.id 
-                    WHERE tag.type = 'genre' AND tag.name = #{genre}
+                    WHERE tag.type = 'genre' AND tag.name = #{query.genre}
                 )
             </if>
-            <if test="theme != null and theme != ''">
+            <if test="query.theme != null and query.theme != ''">
                 AND id IN (
                     SELECT poetry_id FROM poetry_tag 
                     JOIN tag ON poetry_tag.tag_id = tag.id 
-                    WHERE tag.type = 'theme' AND tag.name = #{theme}
+                    WHERE tag.type = 'theme' AND tag.name = #{query.theme}
                 )
             </if>
         </where>

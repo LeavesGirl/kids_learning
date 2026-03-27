@@ -8,9 +8,11 @@ import com.kidslearning.entity.query.EnglishQuery;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface EnglishMapper extends BaseMapper<English> {
 
-    List<English> selectByQuery(EnglishQuery query);
+
+    Page<English> selectByQuery(Page<English> page, @Param("query") EnglishQuery query);
 }

@@ -20,6 +20,11 @@ public class PoetryController extends BaseController<Poetry, PoetryQuery> {
     
     @Autowired
     private TagService tagService;
+    
+    @Autowired
+    public void setPoetryService(PoetryService poetryService) {
+        this.baseService = poetryService;
+    }
 
     @GetMapping("/list")
     public String list(Model model) {
@@ -29,4 +34,5 @@ public class PoetryController extends BaseController<Poetry, PoetryQuery> {
     }
 
    
+
 }

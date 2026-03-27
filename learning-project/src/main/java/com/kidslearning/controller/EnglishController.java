@@ -14,5 +14,10 @@ public class EnglishController extends BaseController<English, EnglishQuery> {
 
     @Autowired
     private EnglishService englishService;
+    
+    @Autowired
+    public void setEnglishService(EnglishService englishService) {
+        this.baseService = englishService;
+    }
 
 }

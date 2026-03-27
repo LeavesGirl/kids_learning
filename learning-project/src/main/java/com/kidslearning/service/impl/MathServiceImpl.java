@@ -1,7 +1,10 @@
 package com.kidslearning.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.kidslearning.entity.Math;
+import com.kidslearning.entity.Math;
+import com.kidslearning.entity.query.MathQuery;
 import com.kidslearning.entity.query.MathQuery;
 import com.kidslearning.mapper.MathMapper;
 import com.kidslearning.service.MathService;
@@ -13,7 +16,7 @@ import java.util.List;
 public class MathServiceImpl extends ServiceImpl<MathMapper, Math> implements MathService {
 
     @Override
-    public List<Math> listData(MathQuery query) {
-        return baseMapper.selectByQuery(query);
+    public Page<Math> listPage(Page<Math> page, MathQuery query) {
+        return baseMapper.selectByQuery(page, query);
     }
 }

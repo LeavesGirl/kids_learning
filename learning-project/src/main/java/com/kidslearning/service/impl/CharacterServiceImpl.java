@@ -14,8 +14,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CharacterServiceImpl extends ServiceImpl<CharacterMapper, ChineseCharacter> implements CharacterService {
 
+
     @Override
-    public List<ChineseCharacter> listData(CharacterQuery query) {
-        return baseMapper.selectByQuery( query);
+    public Page<ChineseCharacter> listPage(Page<ChineseCharacter> page, CharacterQuery query) {
+        return baseMapper.selectByQuery(page, query);
     }
 }
