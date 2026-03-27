@@ -1,0 +1,88 @@
+<div th:fragment="cards" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+    <!-- 诗词模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/poetry/list'|">
+            <img th:src="@{/images/poetry.png}" class="card-img-top" alt="诗词" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20poetry%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">诗词学习</h5>
+                <p class="card-text">学习经典诗词，感受传统文化的魅力</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 识字模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/character/list'|">
+            <img th:src="@{/images/character.png}" class="card-img-top" alt="识字" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20characters%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">识字学习</h5>
+                <p class="card-text">学习汉字，掌握基本的读写能力</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 英文模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/english/list'|">
+            <img th:src="@{/images/english.png}" class="card-img-top" alt="英文" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=english%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">英文学习</h5>
+                <p class="card-text">学习基础英语单词和简单句子</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 拼音模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/pinyin/list'|">
+            <img th:src="@{/images/pinyin.png}" class="card-img-top" alt="拼音" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20pinyin%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">拼音学习</h5>
+                <p class="card-text">学习汉语拼音，掌握正确的发音</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 成语模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/idiom/list'|">
+            <img th:src="@{/images/idiom.png}" class="card-img-top" alt="成语" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20idioms%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">成语学习</h5>
+                <p class="card-text">学习常用成语，丰富语言表达</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 画画模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/drawing/list'|">
+            <img th:src="@{/images/drawing.png}" class="card-img-top" alt="画画" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=drawing%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">画画学习</h5>
+                <p class="card-text">学习简单的绘画技巧，培养创造力</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 数学模块 -->
+    <div class="col">
+        <div class="card module-card" th:onclick="|window.location.href='/math/list'|">
+            <img th:src="@{/images/math.png}" class="card-img-top" alt="数学" onerror="this.src='https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=math%20learning%20for%20kids%2C%20colorful%20illustration%2C%20educational%2C%20friendly%20style&image_size=square_hd'">
+            <div class="card-body">
+                <h5 class="card-title">数学学习</h5>
+                <p class="card-text">学习基础数学知识，培养逻辑思维</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 空白卡片，用于填充布局 -->
+    <div class="col">
+        <div class="card module-card" style="opacity: 0; cursor: default;">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+</div>
