@@ -11,6 +11,7 @@ public class Drawing {
     private String title;
     private String description;
     private String imagePath;
+    private java.time.LocalDateTime createdAt;
 
     public Long getId() {
         return id;
@@ -42,5 +43,13 @@ public class Drawing {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public java.time.LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(java.time.LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

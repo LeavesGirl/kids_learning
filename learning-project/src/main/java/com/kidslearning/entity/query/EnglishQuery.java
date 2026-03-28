@@ -10,6 +10,9 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class EnglishQuery extends BaseQuery {
     
-    private String keyword;
+    private String word;
+    private String meaning;
+    private String type;
+    private Boolean learned;
  
 }

@@ -10,6 +10,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class PinyinQuery extends BaseQuery {
     
-    private String keyword;
- 
+    private String pinyin;
+    private String type;
+    private Boolean learned;
+    
 }

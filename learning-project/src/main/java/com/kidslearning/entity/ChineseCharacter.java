@@ -15,6 +15,8 @@ public class ChineseCharacter {
     private String meaning;
     @TableField("stroke_order")
     private String strokeOrder;
+    private String category;
+    private Boolean learned;
 
     public Long getId() {
         return id;
@@ -54,5 +56,21 @@ public class ChineseCharacter {
 
     public void setStrokeOrder(String strokeOrder) {
         this.strokeOrder = strokeOrder;
+    }
+
+    public Boolean getLearned() {
+        return learned;
+    }
+
+    public void setLearned(Boolean learned) {
+        this.learned = learned;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

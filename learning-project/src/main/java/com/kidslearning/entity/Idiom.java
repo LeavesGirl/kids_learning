@@ -12,6 +12,7 @@ public class Idiom {
     private String pinyin;
     private String meaning;
     private String origin;
+    private Boolean learned;
 
     public Long getId() {
         return id;
@@ -51,5 +52,13 @@ public class Idiom {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public Boolean getLearned() {
+        return learned;
+    }
+
+    public void setLearned(Boolean learned) {
+        this.learned = learned;
     }
 }

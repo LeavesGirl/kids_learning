@@ -5,10 +5,10 @@ import com.kidslearning.entity.query.EnglishQuery;
 import com.kidslearning.service.BaseService;
 import com.kidslearning.service.EnglishService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/english")
 public class EnglishController extends BaseController<English, EnglishQuery> {
 

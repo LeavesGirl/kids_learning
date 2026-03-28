@@ -4,10 +4,13 @@
     <select id="selectByQuery" resultType="com.kidslearning.entity.Idiom" parameterType="com.kidslearning.entity.query.IdiomQuery">
         SELECT * FROM idiom
         <where>
-            <if test="keyword != null and keyword != ''">
-                AND  diom LIKE CONCAT('%', #{keyword}, '%')
+            <if test="query.keyword != null and query.keyword != ''">
+                AND (idiom LIKE CONCAT('%', #{query.keyword}, '%') OR pinyin LIKE CONCAT('%', #{query.keyword}, '%'))
+            </if>
+            <if test="query.learned != null">
+                AND learned = #{query.learned}
             </if>
         </where>
-        ORDER BY id DESC
+        ORDER BY id ASC
     </select>
 </mapper>

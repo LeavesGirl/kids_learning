@@ -15,5 +15,7 @@ public class Poetry {
     private String content;
     private String explanation;
     private String dynasty;
+    private Boolean learned;
+    private String tags;
 
 }

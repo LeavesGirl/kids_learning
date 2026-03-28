@@ -7,11 +7,13 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper=false)
 public class PoetryQuery extends BaseQuery {
-    private String keyword;
-    private String dynasty;
+    private String title;
+    private String content;
     private String author;
+    private String dynasty;
     private String genre;
     private String theme;
+    private Boolean learned;
 
     
 }

@@ -4,10 +4,16 @@
     <select id="selectByQuery" resultType="com.kidslearning.entity.Pinyin" parameterType="com.kidslearning.entity.query.PinyinQuery">
         SELECT * FROM pinyin
         <where>
-            <if test="keyword != null and keyword != ''">
-              `character` LIKE CONCAT(#{keyword}, '%')
+            <if test="query.pinyin != null and query.pinyin != ''">
+                AND pinyin LIKE CONCAT(#{query.pinyin}, '%')
+            </if>
+            <if test="query.type != null and query.type != ''">
+                AND type = #{query.type}
+            </if>
+            <if test="query.learned != null">
+                AND learned = #{query.learned}
             </if>
         </where>
-        ORDER BY id DESC
+        ORDER BY id ASC
     </select>
 </mapper>

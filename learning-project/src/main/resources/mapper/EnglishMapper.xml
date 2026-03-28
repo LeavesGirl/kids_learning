@@ -4,10 +4,19 @@
     <select id="selectByQuery" resultType="com.kidslearning.entity.English" parameterType="com.kidslearning.entity.query.EnglishQuery">
         SELECT * FROM english
         <where>
-            <if test="keyword != null and keyword != ''">
-                AND word LIKE CONCAT( #{keyword}, '%')
+            <if test="query.word != null and query.word != ''">
+                AND word LIKE CONCAT( #{query.word}, '%')
+            </if>
+            <if test="query.meaning != null and query.meaning != ''">
+                AND meaning LIKE CONCAT( #{query.meaning}, '%')
+            </if>
+            <if test="query.type != null and query.type != ''">
+                AND type = #{query.type}
+            </if>
+            <if test="query.learned != null">
+                AND learned = #{query.learned}
             </if>
         </where>
-        ORDER BY id DESC
+        ORDER BY id ASC
     </select>
 </mapper>

@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+import lombok.Data;
+
+@Data
 @TableName("english")
 public class English {
     @TableId(type = IdType.AUTO)
@@ -12,44 +15,7 @@ public class English {
     private String pronunciation;
     private String meaning;
     private String example;
+    private String type;
+    private Boolean learned;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
-
-    public String getPronunciation() {
-        return pronunciation;
-    }
-
-    public void setPronunciation(String pronunciation) {
-        this.pronunciation = pronunciation;
-    }
-
-    public String getMeaning() {
-        return meaning;
-    }
-
-    public void setMeaning(String meaning) {
-        this.meaning = meaning;
-    }
-
-    public String getExample() {
-        return example;
-    }
-
-    public void setExample(String example) {
-        this.example = example;
-    }
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kidslearning.mapper.DrawingMapper">
+    <select id="selectByQuery" resultType="com.kidslearning.entity.Drawing" parameterType="com.kidslearning.entity.query.DrawingQuery">
+        SELECT * FROM drawing
+        <where>
+            <if test="query.title != null and query.title != ''">
+                AND title LIKE CONCAT('%', #{query.title}, '%')
+            </if>
+            <if test="query.startDate != null and query.startDate != ''">
+                AND created_at &gt;= #{query.startDate}
+            </if>
+            <if test="query.endDate != null and query.endDate != ''">
+                AND created_at &lt;= #{query.endDate}
+            </if>
+        </where>
+        ORDER BY id DESC
+    </select>
+</mapper>

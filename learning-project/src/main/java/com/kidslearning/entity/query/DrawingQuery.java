@@ -8,6 +8,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class DrawingQuery extends BaseQuery {
     
-    private String keyword;
+    private String title;
+    private String startDate;
+    private String endDate;
  
 }

@@ -4,10 +4,19 @@
     <select id="selectByQuery" resultType="com.kidslearning.entity.ChineseCharacter" parameterType="com.kidslearning.entity.query.CharacterQuery">
         SELECT * FROM characters
         <where>
-            <if test="keyword != null and keyword != ''">
-                AND (`character` LIKE CONCAT('%', #{keyword}, '%') OR pinyin LIKE CONCAT('%', #{keyword}, '%'))
+            <if test="query.character != null and query.character != ''">
+                AND `character` LIKE CONCAT('%', #{query.character}, '%') 
+            </if>
+              <if test="query.pinyin != null and query.pinyin != ''">
+                AND pinyin LIKE CONCAT('%', #{query.pinyin}, '%') 
+            </if>
+            <if test="query.category != null and query.category != ''">
+                AND category = #{query.category}
+            </if>
+            <if test="query.learned != null">
+                AND learned = #{query.learned}
             </if>
         </where>
-        ORDER BY id DESC
+        ORDER BY id ASC
     </select>
 </mapper>

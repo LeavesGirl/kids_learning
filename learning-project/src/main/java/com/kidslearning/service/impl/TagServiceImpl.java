@@ -21,20 +21,7 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
     public Map<String, List<Tag>> getTagsByType() {
         // 获取所有标签
         List<Tag> tags = baseMapper.selectList(null);
-        return tags.stream().collect(Collectors.groupingBy(t -> {
-            switch (t.getType()) {
-                case "author":
-                    return "作者";
-                case "theme":
-                    return "主题";
-                case "genre":
-                    return "体裁";
-                case "dynasty":
-                    return "朝代";
-                default:
-                    return "未知";
-            }
-        }));
+        return tags.stream().collect(Collectors.groupingBy(Tag::getType));
 
     }
 }

@@ -10,10 +10,11 @@ public class Pinyin {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String pinyin;
-    private String tone;
     @TableField("`character`")
     private String character;
+    private String type;
     private String description;
+    private Boolean learned;
 
     public Long getId() {
         return id;
@@ -31,14 +32,6 @@ public class Pinyin {
         this.pinyin = pinyin;
     }
 
-    public String getTone() {
-        return tone;
-    }
-
-    public void setTone(String tone) {
-        this.tone = tone;
-    }
-
     public String getCharacter() {
         return character;
     }
@@ -47,11 +40,27 @@ public class Pinyin {
         this.character = character;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getLearned() {
+        return learned;
+    }
+
+    public void setLearned(Boolean learned) {
+        this.learned = learned;
     }
 }

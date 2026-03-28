@@ -11,5 +11,6 @@ import lombok.EqualsAndHashCode;
 public class IdiomQuery extends BaseQuery {
     
     private String keyword;
+    private Boolean learned;
  
 }

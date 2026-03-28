@@ -5,14 +5,17 @@
     <select id="selectByQuery" resultType="com.kidslearning.entity.Poetry" parameterType="com.kidslearning.entity.query.PoetryQuery">
         SELECT * FROM poetry
         <where>
-            <if test="query.keyword != null and query.keyword != ''">
-                AND content LIKE CONCAT('%', #{query.keyword}, '%')
+            <if test="query.title != null and query.title != ''">
+                AND title LIKE CONCAT('%', #{query.title}, '%')
             </if>
-            <if test="query.dynasty != null and query.dynasty != ''">
-                AND dynasty = #{dynasty}
+            <if test="query.content != null and query.content != ''">
+                AND content LIKE CONCAT('%', #{query.content}, '%')
             </if>
             <if test="query.author != null and query.author != ''">
-                AND author = #{query.author}
+                AND author LIKE CONCAT('%', #{query.author}, '%')
+            </if>
+            <if test="query.dynasty != null and query.dynasty != ''">
+                AND dynasty = #{query.dynasty}
             </if>
             <if test="query.genre != null and query.genre != ''">
                 AND id IN (
@@ -28,7 +31,10 @@
                     WHERE tag.type = 'theme' AND tag.name = #{query.theme}
                 )
             </if>
+            <if test="query.learned != null">
+                AND learned = #{query.learned}
+            </if>
         </where>
-        ORDER BY id DESC
+        ORDER BY id ASC
     </select>
 </mapper>

@@ -8,7 +8,10 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class CharacterQuery extends BaseQuery {
     
-    private String keyword;
+    private String character;
+    private String pinyin;
+    private String category;
+    private Boolean learned;
 
     
 }
