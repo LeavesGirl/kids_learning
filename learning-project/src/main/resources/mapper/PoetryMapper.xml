@@ -17,19 +17,8 @@
             <if test="query.dynasty != null and query.dynasty != ''">
                 AND dynasty = #{query.dynasty}
             </if>
-            <if test="query.genre != null and query.genre != ''">
-                AND id IN (
-                    SELECT poetry_id FROM poetry_tag 
-                    JOIN tag ON poetry_tag.tag_id = tag.id 
-                    WHERE tag.type = 'genre' AND tag.name = #{query.genre}
-                )
-            </if>
-            <if test="query.theme != null and query.theme != ''">
-                AND id IN (
-                    SELECT poetry_id FROM poetry_tag 
-                    JOIN tag ON poetry_tag.tag_id = tag.id 
-                    WHERE tag.type = 'theme' AND tag.name = #{query.theme}
-                )
+            <if test="query.tags != null and query.tags != ''">
+                AND tags LIKE CONCAT('%', #{query.tags}, '%')
             </if>
             <if test="query.learned != null">
                 AND learned = #{query.learned}

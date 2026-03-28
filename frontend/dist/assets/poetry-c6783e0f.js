@@ -1,0 +1,1 @@
+import{a as e}from"./axios-8531ffad.js";const o={list:t=>e.get("/poetry/listData",{params:t}),detail:t=>e.get(`/poetry/detail/${t}`),tags:()=>e.get("/poetry/tags"),update:(t,a)=>e.put(`/poetry/update/${t}`,a)};export{o as p};

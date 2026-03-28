@@ -11,8 +11,7 @@ public class PoetryQuery extends BaseQuery {
     private String content;
     private String author;
     private String dynasty;
-    private String genre;
-    private String theme;
+    private String tags;
     private Boolean learned;
 
     

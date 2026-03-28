@@ -1,0 +1,1 @@
+import{a as t}from"./axios-8531ffad.js";const r={list:a=>t.get("/character/listData",{params:a}),detail:a=>t.get(`/character/detail/${a}`),update:(a,e)=>t.put(`/character/update/${a}`,e)};export{r as c};
